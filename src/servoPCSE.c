@@ -11,10 +11,16 @@
 
 /*=====[Definition macros of private constants]==============================*/
 #define BASE 10000
-#define SLOPE 0.0555*BASE
+#define MIN_DUTY 0.5
+#define MAX_DUTY 2.5
+#define MIN_ANGLE 0
+#define MAX_ANGLE 180
+#define SLOPE 	(((MAX_DUTY - MIN_DUTY) / (MAX_ANGLE - MIN_ANGLE)) * BASE)
 #define INTERCEPT 2.5*BASE
 #define SERVO_ERROR 66
 #define SERVO_OK 1
+#define PERIOD_MS 20
+
 /*=====[Definition of private data type]==============================*/
 
 typedef struct{
